@@ -24,12 +24,13 @@ app.post('/guardar-respuesta', async (req, res) => {
 
     try {
         let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL,
-                pass:process.env.PASS  // ⚠️ tu nueva contraseña
-            }
-        });
+      service: 'gmail',
+       auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
 
         await transporter.sendMail({
             from: '"Formulario 💌" <cristianchile973@gmail.com>',
@@ -46,7 +47,8 @@ app.post('/guardar-respuesta', async (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(3000, () => {
-    console.log("Servidor activo en http://localhost:3000");
-});
+const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+    console.log(`Servidor activo en el puerto ${PORT}`);
+});
