@@ -24,7 +24,7 @@ app.post('/guardar-respuesta', async (req, res) => {
 
     try {
         let transporter = nodemailer.createTransport({
-      service: 'smtp.gmail.com',
+      host: "smtp-relay.brevo.com",
            port: 587,
          secure: false,
        auth: {
