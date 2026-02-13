@@ -24,6 +24,10 @@ oAuth2Client.setCredentials({
   refresh_token: process.env.REFRESH_TOKEN,
 });
 
+
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("CLIENT_ID:", process.env.CLIENT_ID);
+
 // 📩 Ruta que recibe la respuesta
 app.post("/guardar-respuesta", async (req, res) => {
   const opcion = req.body.opcion;
