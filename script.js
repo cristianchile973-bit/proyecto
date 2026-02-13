@@ -1,3 +1,4 @@
+EMAIL_USER: undefined
 const questionContainer = document.querySelector(".question-container");
 const resultContainer = document.querySelector(".result-container");
 const brokenHeartContainer = document.querySelector(".broken-heart-container");
